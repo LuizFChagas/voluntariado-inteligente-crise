@@ -1,0 +1,161 @@
+openapi: 3.0.0
+info:
+  title: Voluntários UNASP API
+  description: API para cadastrar voluntários, registrar crises, gerenciar treinamentos, checklists e enviar emails
+  version: 5.0.0
+
+servers:
+  - url: https://script.google.com/macros/s/AKfycbxer1ccczNBQ0F_ZB2nRhGBEEasRKcU050_RtnOsRkY-N-zf5X1P_jwQIK4QBK0GxYoZQ
+
+paths:
+  /exec:
+    post:
+      summary: Executar ação de escrita
+      description: Cadastra voluntário, salva treinamento, registra crise, salva checklist ou envia email
+      operationId: executarAcao
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - action
+              properties:
+                action:
+                  type: string
+                  enum:
+                    - cadastrarVoluntario
+                    - salvarTreinamento
+                    - registrarCrise
+                    - salvarChecklist
+                    - enviarEmail
+                  description: Ação a executar
+
+                nome:
+                  type: string
+                email:
+                  type: string
+                habilidade:
+                  type: string
+                disponibilidade:
+                  type: string
+                cidade:
+                  type: string
+
+                area:
+                  type: string
+                nivel:
+                  type: string
+                trilha_concluida:
+                  type: string
+                pontuacao_quiz:
+                  type: string
+                certificado_emitido:
+                  type: string
+
+                tipo_crise:
+                  type: string
+                regiao:
+                  type: string
+                nivel_urgencia:
+                  type: string
+                descricao:
+                  type: string
+                voluntarios_alertados:
+                  type: string
+                status:
+                  type: string
+
+                instituicao:
+                  type: string
+                itens_concluidos:
+                  type: string
+                itens_pendentes:
+                  type: string
+                top3_acoes:
+                  type: string
+
+                to:
+                  type: string
+                  description: Email address of the recipient
+                subject:
+                  type: string
+                  description: Email subject
+                body:
+                  type: string
+                  description: Email body content
+
+      responses:
+        '200':
+          description: Ação executada com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                  id:
+                    type: string
+                  to:
+                    type: string
+
+    get:
+      summary: Buscar dados
+      description: Busca voluntários por região, treinamento por email ou checklist por instituição
+      operationId: buscarDados
+      parameters:
+        - name: action
+          in: query
+          required: true
+          description: Ação de busca
+          schema:
+            type: string
+            enum:
+              - buscarVoluntariosPorRegiao
+              - buscarTreinamento
+              - buscarChecklist
+
+        - name: regiao
+          in: query
+          required: false
+          schema:
+            type: string
+
+        - name: email
+          in: query
+          required: false
+          schema:
+            type: string
+
+        - name: instituicao
+          in: query
+          required: false
+          schema:
+            type: string
+
+      responses:
+        '200':
+          description: Dados retornados com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  volunteers:
+                    type: array
+                    items:
+                      type: object
+                  found:
+                    type: boolean
+                  treinamento:
+                    type: object
+                  checklists:
+                    type: array
+                    items:
+                      type: object
