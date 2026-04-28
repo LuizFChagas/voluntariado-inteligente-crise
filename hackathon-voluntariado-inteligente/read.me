@@ -1,31 +1,99 @@
-# Voluntariado Inteligente para Situações de Crise
+# 🌟 Voluntariado Inteligente para Situações de Crise
 
-Projeto desenvolvido para o Hackathon IBM watsonx Orchestrate + UNASP.
+Projeto desenvolvido para o **Hackathon IA Descomplicada — UNASP + IBM 2026** utilizando IBM watsonx Orchestrate.
+
+---
+
+## 🎯 Sobre o Projeto
+
+Plataforma de voluntariado inteligente que conecta voluntários, coordena emergências e capacita pessoas usando normas reais da **Defesa Civil brasileira**. Um sistema multiagente autônomo que age — não apenas conversa.
+
+---
 
 ## 🚀 O que faz
 
-Sistema multiagente que:
-- cadastra voluntários
-- responde crises em tempo real
-- envia alertas por email
-- recomenda treinamentos
-- avalia preparo institucional
+- ✅ Cadastra voluntários com confirmação automática por email
+- ✅ Classifica emergências por urgência (🔴 Crítico | 🟡 Urgente | 🟢 Monitoramento)
+- ✅ Envia alertas automáticos para voluntários da região afetada
+- ✅ Registra crises e voluntários em planilha em tempo real
+- ✅ Recomenda trilhas de capacitação personalizadas por área e região
+- ✅ Aplica quiz de avaliação e emite certificado digital por email
+- ✅ Guia instituições por checklists pré-crise item por item
+- ✅ Gera plano de ação institucional e envia por email ao coordenador
+- ✅ Verifica histórico de preparação institucional
+- ✅ Lembra voluntários cadastrados via Agent Memory
+
+---
 
 ## 🧠 Tecnologias
 
-- IBM watsonx Orchestrate
-- Google Apps Script
-- Google Sheets
-- OpenAPI
+- **IBM watsonx Orchestrate** — plataforma multiagente
+- **GPT-OSS 120B** — modelo de linguagem
+- **Google Apps Script** — API intermediária para integração
+- **Google Sheets** — banco de dados em tempo real (voluntários, crises, treinamentos, checklists)
+- **Gmail via MailApp** — envio automático de emails
+- **OpenAPI** — integração customizada via YAML
+- **Agent Memory** — memória persistente entre conversas
+
+---
 
 ## 🤖 Agentes
 
-- Manager Agent
-- Volunteer Triage Agent
-- Crisis Agent
-- Training Agent
-- Preparedness Agent
+### 🎯 Manager Agent
+Agente central que recebe qualquer mensagem, identifica a intenção e roteia silenciosamente para o colaborador correto. Tem memória — lembra voluntários cadastrados entre conversas.
+
+### 👤 Volunteer Triage Agent
+Cadastra voluntários em uma única interação. Coleta nome, cidade, email, habilidade e disponibilidade, salva no Google Sheets, envia email de confirmação, onboarding e notifica o coordenador automaticamente.
+
+### 🚨 Crisis Agent
+Recebe relatos de emergência, classifica por urgência, orienta com protocolos reais da Defesa Civil, busca voluntários da região afetada na planilha, envia alertas por email e registra a ocorrência automaticamente.
+
+### 🎓 Training Agent
+Avalia o perfil do voluntário, recomenda trilha personalizada por área e região, aplica quiz de 5 perguntas, salva progresso na planilha e emite certificado digital por email.
+
+### 🏫 Preparedness Agent
+Guia coordenadores institucionais por checklists pré-crise um item por vez (enchente, deslizamento, incêndio, emergência geral), verifica histórico anterior, gera plano de ação com prioridades e envia por email ao coordenador.
+
+---
+
+## 🔗 Integrações reais funcionando
+
+| Integração | Função |
+|---|---|
+| Google Sheets — Voluntários | Cadastro em tempo real |
+| Google Sheets — Ocorrências | Registro de crises |
+| Google Sheets — Treinamentos | Progresso e certificados |
+| Google Sheets — Checklists | Histórico institucional |
+| Gmail | Confirmação, onboarding, alertas, certificados, planos de ação |
+
+---
+
+## 📋 Números de emergência reais
+
+> **Bombeiros 193 | SAMU 192 | Defesa Civil 199**
+
+---
+
+## 🚀 Visão Futura
+
+- **Integração Cemaden/INMET** — alertas automáticos baseados em dados meteorológicos reais
+- **Dashboard de coordenação** — painel visual para gestores em tempo real
+- **Canal WhatsApp** — voluntários recebem alertas e confirmam disponibilidade pelo WhatsApp
+
+---
+
+## 👥 Equipe
+
+| Nome | Papel |
+|---|---|
+| Luiz Felipe Chagas | Focal do Orchestrate |
+| Ana | Knowledge e conteúdo |
+| Ellen | Pitch e apresentação |
+| Murilo | Coordenação geral |
+
+---
 
 ## 🎥 Demo
 
-[link do vídeo]
+https://www.loom.com/share/e3c5be9531a04676a0557436e7d9defb
+https://www.loom.com/share/827d7396edbf4815aacc1c8859e1de90
