@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assistente — Voluntariado Inteligente</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 <div class="app-page">
@@ -12,7 +13,7 @@
   <!-- APP HEADER -->
   <header class="app-header">
     <a href="index.html" class="nav-logo">
-      <div class="logo-icon">🤝</div>
+      <div class="logo-icon"><i data-lucide="heart-handshake"></i></div>
       <span>Voluntariado Inteligente</span>
     </a>
     <div class="user-info" id="user-info">
@@ -36,30 +37,30 @@
       <div class="sidebar-section">
         <h4>Ações Rápidas</h4>
         <button class="quick-btn crisis" onclick="sendQuick('Preciso reportar uma emergência')">
-          🚨 Reportar Crise
+          <i data-lucide="triangle-alert"></i> Reportar Crise
         </button>
         <button class="quick-btn" onclick="sendQuick('Quero me cadastrar como voluntário')">
-          🙋 Ser Voluntário
+          <i data-lucide="user-plus"></i> Ser Voluntário
         </button>
         <button class="quick-btn" onclick="sendQuick('Quero fazer treinamento de capacitação')">
-          🎓 Iniciar Capacitação
+          <i data-lucide="graduation-cap"></i> Iniciar Capacitação
         </button>
         <button class="quick-btn" onclick="sendQuick('Quero fazer o checklist da minha instituição')">
-          📋 Checklist Institucional
+          <i data-lucide="clipboard-list"></i> Checklist Institucional
         </button>
       </div>
 
       <div class="sidebar-section">
         <h4>Emergências</h4>
         <div style="display:flex; flex-direction:column; gap:6px;">
-          <div style="padding:8px 12px; background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.15); border-radius:6px; font-size:12px; color:var(--red); font-weight:600;">
-            🚒 Bombeiros: 193
+          <div style="padding:8px 12px; background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.15); border-radius:6px; font-size:12px; color:var(--red); font-weight:600; display:flex; align-items:center; gap:6px;">
+            <i data-lucide="flame" style="width:13px;height:13px;"></i> Bombeiros: 193
           </div>
-          <div style="padding:8px 12px; background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.15); border-radius:6px; font-size:12px; color:var(--red); font-weight:600;">
-            🚑 SAMU: 192
+          <div style="padding:8px 12px; background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.15); border-radius:6px; font-size:12px; color:var(--red); font-weight:600; display:flex; align-items:center; gap:6px;">
+            <i data-lucide="heart-pulse" style="width:13px;height:13px;"></i> SAMU: 192
           </div>
-          <div style="padding:8px 12px; background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.15); border-radius:6px; font-size:12px; color:var(--red); font-weight:600;">
-            🏚️ Defesa Civil: 199
+          <div style="padding:8px 12px; background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.15); border-radius:6px; font-size:12px; color:var(--red); font-weight:600; display:flex; align-items:center; gap:6px;">
+            <i data-lucide="shield" style="width:13px;height:13px;"></i> Defesa Civil: 199
           </div>
         </div>
       </div>
@@ -67,10 +68,10 @@
       <div class="sidebar-section" style="margin-top:auto;">
         <h4>Configuração IBM</h4>
         <button class="quick-btn" onclick="openConfig()" style="font-size:12px;">
-          ⚙️ Configurar Orchestrate
+          <i data-lucide="settings"></i> Configurar Orchestrate
         </button>
         <button class="quick-btn" onclick="clearChat()" style="font-size:12px; color:var(--text3);">
-          🗑️ Limpar Conversa
+          <i data-lucide="trash-2"></i> Limpar Conversa
         </button>
       </div>
     </aside>
@@ -78,7 +79,7 @@
     <!-- CHAT AREA -->
     <main class="chat-area">
       <div class="chat-header">
-        <div class="chat-header-icon">🤖</div>
+        <div class="chat-header-icon"><i data-lucide="bot"></i></div>
         <div class="chat-header-info">
           <h3>Manager Agent</h3>
           <p>IBM watsonx Orchestrate · 5 agentes especializados</p>
@@ -91,9 +92,9 @@
       <!-- MESSAGES CONTAINER -->
       <div class="messages" id="messages">
         <div class="welcome-state" id="welcome-state">
-          <div class="big-icon">🤝</div>
+          <div class="big-icon"><i data-lucide="heart-handshake"></i></div>
           <h3>Olá! Como posso ajudar?</h3>
-          <p>Sou o assistente do Voluntariado Inteligente UNASP, coordenado pelo IBM watsonx Orchestrate. Selecione uma ação ou escreva sua mensagem.</p>
+          <p>Sou o assistente do Voluntariado Inteligente, coordenado pelo IBM watsonx Orchestrate. Selecione uma ação ou escreva sua mensagem.</p>
           <div class="welcome-suggestions">
             <div class="suggestion-chip" onclick="sendQuick('Olá, como funciona a plataforma?')">Como funciona?</div>
             <div class="suggestion-chip" onclick="sendQuick('Quero me cadastrar como voluntário')">Ser voluntário</div>
@@ -115,7 +116,7 @@
           ></textarea>
         </div>
         <button class="send-btn" id="send-btn" onclick="sendMessage()">
-          ➤
+          <i data-lucide="send"></i>
         </button>
       </div>
     </main>
@@ -125,7 +126,7 @@
 <!-- CONFIG MODAL -->
 <div class="modal-overlay" id="config-modal">
   <div class="modal">
-    <h3>⚙️ Configuração IBM watsonx Orchestrate</h3>
+    <h3><i data-lucide="settings" style="width:18px;height:18px;display:inline-block;vertical-align:middle;margin-right:8px;"></i>Configuração IBM watsonx Orchestrate</h3>
     <p>
       Para conectar ao IBM Orchestrate real, edite o arquivo
       <code style="background:var(--bg3); padding:2px 6px; border-radius:4px; font-size:12px;">js/config.js</code>
@@ -162,23 +163,24 @@
 <script src="js/config.js"></script>
 <script src="js/chat.js"></script>
 <script>
+  // SVG inline do ícone bot para uso dinâmico no JS
+  const BOT_AVATAR_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`;
+
   let isLoading = false;
   let session = null;
 
-  // Init
   window.addEventListener('DOMContentLoaded', async () => {
-    // Load user session
+    lucide.createIcons();
+
     session = JSON.parse(localStorage.getItem('vi_session') || 'null');
     updateUserUI();
 
-    // Set mode badge
     document.getElementById('mode-badge').textContent = ORCHESTRATE_CONFIG.demoMode ? 'DEMO' : 'LIVE';
     if (!ORCHESTRATE_CONFIG.demoMode) {
       document.getElementById('mode-badge').style.background = 'rgba(16,185,129,0.1)';
       document.getElementById('mode-badge').style.color = 'var(--green)';
     }
 
-    // Connect to IBM Orchestrate
     const connected = await chat.connect();
     updateStatus(connected);
   });
@@ -209,7 +211,6 @@
     }
   }
 
-  // ── Send message ──────────────────────────────────────────
   async function sendMessage() {
     const input = document.getElementById('chat-input');
     const text = input.value.trim();
@@ -231,7 +232,6 @@
     sendMessage();
   }
 
-  // ── Message rendering ─────────────────────────────────────
   function addMessage(role, text) {
     const messagesEl = document.getElementById('messages');
     const isUser = role === 'user';
@@ -240,7 +240,7 @@
     const msg = document.createElement('div');
     msg.className = `message ${role}`;
     msg.innerHTML = `
-      <div class="msg-avatar">${isUser ? initial : '🤖'}</div>
+      <div class="msg-avatar">${isUser ? initial : BOT_AVATAR_SVG}</div>
       <div class="msg-bubble">${isUser ? escapeHtml(text) : renderMarkdown(text)}</div>
     `;
     messagesEl.appendChild(msg);
@@ -258,7 +258,7 @@
       typing.className = 'message bot';
       typing.id = 'typing-indicator';
       typing.innerHTML = `
-        <div class="msg-avatar">🤖</div>
+        <div class="msg-avatar">${BOT_AVATAR_SVG}</div>
         <div class="typing-indicator">
           <span></span><span></span><span></span>
         </div>
@@ -282,9 +282,9 @@
     welcome.id = 'welcome-state';
     welcome.className = 'welcome-state';
     welcome.innerHTML = `
-      <div class="big-icon">🤝</div>
+      <div class="big-icon" style="color:var(--blue);">${BOT_AVATAR_SVG.replace('width="16" height="16"', 'width="48" height="48"').replace('stroke="white"', 'stroke="currentColor"')}</div>
       <h3>Olá! Como posso ajudar?</h3>
-      <p>Sou o assistente do Voluntariado Inteligente UNASP, coordenado pelo IBM watsonx Orchestrate.</p>
+      <p>Sou o assistente do Voluntariado Inteligente, coordenado pelo IBM watsonx Orchestrate.</p>
       <div class="welcome-suggestions">
         <div class="suggestion-chip" onclick="sendQuick('Olá, como funciona a plataforma?')">Como funciona?</div>
         <div class="suggestion-chip" onclick="sendQuick('Quero me cadastrar como voluntário')">Ser voluntário</div>
@@ -298,7 +298,6 @@
     chat.connect().then(updateStatus);
   }
 
-  // ── Input helpers ─────────────────────────────────────────
   function handleKey(e) {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
@@ -315,13 +314,13 @@
     return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
-  // ── Config modal ──────────────────────────────────────────
   function openConfig() {
     document.getElementById('cfg-apikey').value = ORCHESTRATE_CONFIG.apiKey !== 'YOUR_IBM_CLOUD_API_KEY' ? ORCHESTRATE_CONFIG.apiKey : '';
     document.getElementById('cfg-instanceid').value = ORCHESTRATE_CONFIG.serviceInstanceId !== 'YOUR_SERVICE_INSTANCE_ID' ? ORCHESTRATE_CONFIG.serviceInstanceId : '';
     document.getElementById('cfg-assistantid').value = ORCHESTRATE_CONFIG.assistantId !== 'YOUR_MANAGER_AGENT_ID' ? ORCHESTRATE_CONFIG.assistantId : '';
     document.getElementById('cfg-region').value = ORCHESTRATE_CONFIG.region;
     document.getElementById('config-modal').classList.add('show');
+    lucide.createIcons();
   }
 
   function closeConfig() {
@@ -352,8 +351,8 @@
       const connected = await chat.connect();
       updateStatus(connected);
       addMessage('bot', connected
-        ? '✅ Conectado ao IBM watsonx Orchestrate! Como posso ajudar?'
-        : '⚠️ Não foi possível conectar. Verifique suas credenciais e tente novamente.'
+        ? 'Conectado ao IBM watsonx Orchestrate! Como posso ajudar?'
+        : 'Não foi possível conectar. Verifique suas credenciais e tente novamente.'
       );
       hideWelcome();
     } else {
@@ -361,7 +360,6 @@
     }
   }
 
-  // Close modal on overlay click
   document.getElementById('config-modal').addEventListener('click', function(e) {
     if (e.target === this) closeConfig();
   });

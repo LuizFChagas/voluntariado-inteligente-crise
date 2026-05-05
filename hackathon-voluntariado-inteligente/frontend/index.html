@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voluntariado Inteligente — UNASP + IBM</title>
+  <title>Voluntariado Inteligente — IBM watsonx Orchestrate</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
-    /* Extra styles specific to landing page */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -19,7 +19,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
     }
-    .feature-icon { font-size: 28px; margin-bottom: 12px; }
+    .feature-icon { margin-bottom: 12px; color: var(--blue); }
     .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
     .feature-card p { font-size: 13px; color: var(--text2); line-height: 1.6; }
     .tech-strip {
@@ -45,7 +45,7 @@
       font-size: 14px;
       font-weight: 500;
     }
-    .tech-item .t-icon { font-size: 22px; }
+    .tech-item .t-icon { display: flex; align-items: center; }
     .stats-strip {
       background: var(--bg2);
       padding: 48px 24px;
@@ -79,7 +79,7 @@
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <div class="nav-logo">
-      <div class="logo-icon">🤝</div>
+      <div class="logo-icon"><i data-lucide="heart-handshake"></i></div>
       <span>Voluntariado Inteligente</span>
     </div>
     <ul class="nav-links">
@@ -89,7 +89,9 @@
     </ul>
     <div class="nav-cta">
       <a href="login.html" class="btn btn-ghost">Entrar</a>
-      <a href="login.html?tab=register" class="btn btn-primary">Seja Voluntário</a>
+      <a href="login.html?tab=register" class="btn btn-primary">
+        <i data-lucide="user-plus"></i> Seja Voluntário
+      </a>
     </div>
   </div>
 </nav>
@@ -101,7 +103,7 @@
   <div class="hero-content">
     <div class="hero-badge">
       <span class="dot"></span>
-      Hackathon UNASP + IBM 2026
+      Hackathon IBM watsonx 2026
     </div>
     <h1>
       Voluntariado<br>
@@ -113,8 +115,12 @@
       no momento certo, coordenada pelo IBM watsonx Orchestrate.
     </p>
     <div class="hero-actions">
-      <a href="login.html?tab=register" class="btn btn-primary btn-lg">🙋 Quero Ser Voluntário</a>
-      <a href="app.html" class="btn btn-red btn-lg">🚨 Reportar Emergência</a>
+      <a href="login.html?tab=register" class="btn btn-primary btn-lg">
+        <i data-lucide="user-plus"></i> Quero Ser Voluntário
+      </a>
+      <a href="app.html" class="btn btn-red btn-lg">
+        <i data-lucide="triangle-alert"></i> Reportar Emergência
+      </a>
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
@@ -131,7 +137,7 @@
       </div>
     </div>
     <div class="emergency-bar">
-      <span class="alert-icon">🆘</span>
+      <span class="alert-icon"><i data-lucide="siren"></i></span>
       <span>Emergências: <strong>Bombeiros 193</strong> · <strong>SAMU 192</strong> · <strong>Defesa Civil 199</strong></span>
     </div>
   </div>
@@ -140,11 +146,18 @@
 <!-- TECH STRIP -->
 <div class="tech-strip">
   <div class="tech-strip-inner">
-    <div class="tech-item"><span class="t-icon">🔷</span> IBM watsonx Orchestrate</div>
-    <div class="tech-item"><span class="t-icon">🤖</span> Multi-Agent AI</div>
-    <div class="tech-item"><span class="t-icon">📊</span> Google Sheets DB</div>
-    <div class="tech-item"><span class="t-icon">✉️</span> Email Automático</div>
-    <div class="tech-item"><span class="t-icon">🏫</span> UNASP</div>
+    <div class="tech-item">
+      <span class="t-icon"><i data-lucide="cpu"></i></span> IBM watsonx Orchestrate
+    </div>
+    <div class="tech-item">
+      <span class="t-icon"><i data-lucide="network"></i></span> Multi-Agent AI
+    </div>
+    <div class="tech-item">
+      <span class="t-icon"><i data-lucide="table-2"></i></span> Google Sheets DB
+    </div>
+    <div class="tech-item">
+      <span class="t-icon"><i data-lucide="mail"></i></span> Email Automático
+    </div>
   </div>
 </div>
 
@@ -215,7 +228,7 @@
 
       <div class="agent-card" style="--agent-color:#3B82F6; --agent-bg:rgba(59,130,246,0.1);">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-          <div class="agent-icon">🎯</div>
+          <div class="agent-icon" style="color:#3B82F6;"><i data-lucide="target"></i></div>
           <span class="live-badge">Live</span>
         </div>
         <h3>Manager Agent</h3>
@@ -226,7 +239,7 @@
 
       <div class="agent-card" style="--agent-color:#10B981; --agent-bg:rgba(16,185,129,0.1);">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-          <div class="agent-icon">🙋</div>
+          <div class="agent-icon" style="color:#10B981;"><i data-lucide="user-plus"></i></div>
           <span class="live-badge">Live</span>
         </div>
         <h3>Volunteer Triage Agent</h3>
@@ -237,18 +250,18 @@
 
       <div class="agent-card" style="--agent-color:#EF4444; --agent-bg:rgba(239,68,68,0.1);">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-          <div class="agent-icon">🚨</div>
+          <div class="agent-icon" style="color:#EF4444;"><i data-lucide="triangle-alert"></i></div>
           <span class="live-badge">Live</span>
         </div>
         <h3>Crisis Agent</h3>
-        <p>Resposta imediata a emergências. Classifica urgência (🔴 Crítico / 🟡 Urgente / 🟢 Monitoramento),
+        <p>Resposta imediata a emergências. Classifica urgência (Crítico / Urgente / Monitoramento),
            aciona voluntários por região e registra cada ocorrência.</p>
         <span class="agent-tag">Emergência</span>
       </div>
 
       <div class="agent-card" style="--agent-color:#F59E0B; --agent-bg:rgba(245,158,11,0.1);">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-          <div class="agent-icon">🎓</div>
+          <div class="agent-icon" style="color:#F59E0B;"><i data-lucide="graduation-cap"></i></div>
           <span class="live-badge">Live</span>
         </div>
         <h3>Training Agent</h3>
@@ -259,7 +272,7 @@
 
       <div class="agent-card" style="--agent-color:#8B5CF6; --agent-bg:rgba(139,92,246,0.1);">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-          <div class="agent-icon">📋</div>
+          <div class="agent-icon" style="color:#8B5CF6;"><i data-lucide="clipboard-list"></i></div>
           <span class="live-badge">Live</span>
         </div>
         <h3>Preparedness Agent</h3>
@@ -279,32 +292,32 @@
     <h2 class="section-title">Tudo que você precisa<br>para salvar vidas</h2>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon">⚡</div>
+        <div class="feature-icon"><i data-lucide="zap"></i></div>
         <h3>Resposta Imediata</h3>
         <p>Voluntários da região são alertados automaticamente em segundos após um relato de crise.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🗺️</div>
+        <div class="feature-icon"><i data-lucide="map-pin"></i></div>
         <h3>Match por Região</h3>
         <p>O sistema localiza voluntários geograficamente próximos ao ponto de necessidade.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📧</div>
+        <div class="feature-icon"><i data-lucide="mail"></i></div>
         <h3>Email Automático</h3>
         <p>Confirmações, alertas, certificados e relatórios enviados automaticamente via Gmail.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📊</div>
+        <div class="feature-icon"><i data-lucide="bar-chart-2"></i></div>
         <h3>Dados em Tempo Real</h3>
         <p>Todos os cadastros, crises e treinamentos registrados em Google Sheets em tempo real.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🏆</div>
+        <div class="feature-icon"><i data-lucide="award"></i></div>
         <h3>Certificação Digital</h3>
         <p>Voluntários recebem certificados digitais após completar trilhas de capacitação.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔒</div>
+        <div class="feature-icon"><i data-lucide="shield-check"></i></div>
         <h3>Protocolos Oficiais</h3>
         <p>Todas as orientações seguem protocolos da Defesa Civil, Bombeiros e SAMU.</p>
       </div>
@@ -318,8 +331,12 @@
     <h2>Pronto para fazer<br>a diferença?</h2>
     <p>Junte-se à rede de voluntários inteligentes e ajude quando mais importa.</p>
     <div class="cta-buttons">
-      <a href="login.html?tab=register" class="btn btn-primary btn-lg">🙋 Cadastrar como Voluntário</a>
-      <a href="app.html" class="btn btn-outline btn-lg">💬 Falar com o Assistente</a>
+      <a href="login.html?tab=register" class="btn btn-primary btn-lg">
+        <i data-lucide="user-plus"></i> Cadastrar como Voluntário
+      </a>
+      <a href="app.html" class="btn btn-outline btn-lg">
+        <i data-lucide="message-circle"></i> Falar com o Assistente
+      </a>
     </div>
   </div>
 </section>
@@ -329,23 +346,23 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="nav-logo">
-        <div class="logo-icon">🤝</div>
+        <div class="logo-icon"><i data-lucide="heart-handshake"></i></div>
         <span>Voluntariado Inteligente</span>
       </div>
       <p>Plataforma de IA para coordenação de voluntariado em situações de crise,
-         desenvolvida no Hackathon UNASP + IBM 2026.</p>
+         desenvolvida no Hackathon IBM watsonx 2026.</p>
     </div>
     <div class="footer-emergency">
       <h4>Emergências</h4>
       <div class="emergency-numbers">
-        <span class="em-num">🚒 193</span>
-        <span class="em-num">🚑 192</span>
-        <span class="em-num">🏚️ 199</span>
+        <span class="em-num"><i data-lucide="flame"></i> Bombeiros 193</span>
+        <span class="em-num"><i data-lucide="heart-pulse"></i> SAMU 192</span>
+        <span class="em-num"><i data-lucide="shield"></i> Defesa Civil 199</span>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Voluntariado Inteligente — UNASP</span>
+    <span>© 2026 Voluntariado Inteligente</span>
     <div class="ibm-badge">
       <span>Powered by</span>
       <strong>IBM watsonx Orchestrate</strong>
@@ -354,13 +371,10 @@
 </footer>
 
 <script>
-  // Navbar scroll effect
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
   });
-
-  // Check tab param for login redirect
-  const params = new URLSearchParams(window.location.search);
+  lucide.createIcons();
 </script>
 </body>
 </html>

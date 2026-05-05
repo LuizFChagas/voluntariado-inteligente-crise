@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entrar — Voluntariado Inteligente</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 <div class="auth-page">
   <div class="auth-card">
     <a href="index.html" class="auth-logo">
-      <div class="logo-icon">🤝</div>
+      <div class="logo-icon"><i data-lucide="heart-handshake"></i></div>
       <span>Voluntariado Inteligente</span>
     </a>
 
@@ -30,7 +31,7 @@
         <label>Senha</label>
         <input type="password" id="login-password" placeholder="••••••••" required>
       </div>
-      <button type="submit" class="form-submit">Entrar na Plataforma →</button>
+      <button type="submit" class="form-submit">Entrar na Plataforma</button>
       <div style="text-align:center; margin-top:16px;">
         <span style="font-size:13px; color:var(--text3);">Não tem conta? </span>
         <a href="#" onclick="switchTab('register')" style="font-size:13px; color:var(--blue);">Cadastre-se</a>
@@ -56,11 +57,11 @@
         <label>Área de atuação</label>
         <select id="reg-area" required>
           <option value="">Selecione...</option>
-          <option value="Primeiros Socorros">🚑 Primeiros Socorros e Emergência</option>
-          <option value="Engenharia">🏗️ Engenharia e Construção</option>
-          <option value="Psicologia">🧠 Psicologia e Apoio Emocional</option>
-          <option value="Logística">🚛 Logística e Transporte</option>
-          <option value="Comunicação">📢 Comunicação e Redes Sociais</option>
+          <option value="Primeiros Socorros">Primeiros Socorros e Emergência</option>
+          <option value="Engenharia">Engenharia e Construção</option>
+          <option value="Psicologia">Psicologia e Apoio Emocional</option>
+          <option value="Logística">Logística e Transporte</option>
+          <option value="Comunicação">Comunicação e Redes Sociais</option>
           <option value="Outro">Outro</option>
         </select>
       </div>
@@ -68,7 +69,7 @@
         <label>Senha</label>
         <input type="password" id="reg-password" placeholder="Mínimo 6 caracteres" minlength="6" required>
       </div>
-      <button type="submit" class="form-submit">🙋 Criar Conta de Voluntário</button>
+      <button type="submit" class="form-submit">Criar Conta de Voluntário</button>
       <div style="text-align:center; margin-top:16px;">
         <span style="font-size:13px; color:var(--text3);">Já tem conta? </span>
         <a href="#" onclick="switchTab('login')" style="font-size:13px; color:var(--blue);">Entrar</a>
@@ -79,7 +80,6 @@
 </div>
 
 <script>
-  // Switch between login/register tabs
   function switchTab(tab) {
     document.getElementById('tab-login').classList.toggle('active', tab === 'login');
     document.getElementById('tab-register').classList.toggle('active', tab === 'register');
@@ -87,11 +87,9 @@
     document.getElementById('form-register').classList.toggle('active', tab === 'register');
   }
 
-  // Check URL param on load
   const urlTab = new URLSearchParams(window.location.search).get('tab');
   if (urlTab === 'register') switchTab('register');
 
-  // Login handler
   function handleLogin(e) {
     e.preventDefault();
     const email = document.getElementById('login-email').value;
@@ -107,12 +105,10 @@
       return;
     }
 
-    // Save session
     localStorage.setItem('vi_session', JSON.stringify({ name: user.name, email: user.email, area: user.area, cidade: user.cidade }));
     window.location.href = 'app.html';
   }
 
-  // Register handler
   function handleRegister(e) {
     e.preventDefault();
     const name = document.getElementById('reg-name').value.trim();
@@ -135,6 +131,8 @@
     localStorage.setItem('vi_session', JSON.stringify({ name, email, area, cidade }));
     window.location.href = 'app.html';
   }
+
+  lucide.createIcons();
 </script>
 </body>
 </html>
