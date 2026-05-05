@@ -1,4 +1,7 @@
-.env
-*.log
-node_modules/
+# Credenciais — nunca commitar
+hackathon-voluntariado-inteligente/frontend/js/config.js
+
+# Sistema
 .DS_Store
+Thumbs.db
+.claude/
