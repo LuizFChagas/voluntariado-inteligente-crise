@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — Voluntariado Inteligente</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-card">
+    <a href="index.html" class="auth-logo">
+      <div class="logo-icon">🤝</div>
+      <span>Voluntariado Inteligente</span>
+    </a>
+
+    <div class="auth-tabs">
+      <div class="auth-tab active" id="tab-login" onclick="switchTab('login')">Entrar</div>
+      <div class="auth-tab" id="tab-register" onclick="switchTab('register')">Cadastrar</div>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form class="auth-form active" id="form-login" onsubmit="handleLogin(event)">
+      <div id="login-error" class="form-error"></div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="login-email" placeholder="seu@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>Senha</label>
+        <input type="password" id="login-password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="form-submit">Entrar na Plataforma →</button>
+      <div style="text-align:center; margin-top:16px;">
+        <span style="font-size:13px; color:var(--text3);">Não tem conta? </span>
+        <a href="#" onclick="switchTab('register')" style="font-size:13px; color:var(--blue);">Cadastre-se</a>
+      </div>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form class="auth-form" id="form-register" onsubmit="handleRegister(event)">
+      <div id="register-error" class="form-error"></div>
+      <div class="form-group">
+        <label>Nome completo</label>
+        <input type="text" id="reg-name" placeholder="Seu nome" required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="reg-email" placeholder="seu@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>Cidade e Estado</label>
+        <input type="text" id="reg-cidade" placeholder="Ex: São Paulo, SP" required>
+      </div>
+      <div class="form-group">
+        <label>Área de atuação</label>
+        <select id="reg-area" required>
+          <option value="">Selecione...</option>
+          <option value="Primeiros Socorros">🚑 Primeiros Socorros e Emergência</option>
+          <option value="Engenharia">🏗️ Engenharia e Construção</option>
+          <option value="Psicologia">🧠 Psicologia e Apoio Emocional</option>
+          <option value="Logística">🚛 Logística e Transporte</option>
+          <option value="Comunicação">📢 Comunicação e Redes Sociais</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Senha</label>
+        <input type="password" id="reg-password" placeholder="Mínimo 6 caracteres" minlength="6" required>
+      </div>
+      <button type="submit" class="form-submit">🙋 Criar Conta de Voluntário</button>
+      <div style="text-align:center; margin-top:16px;">
+        <span style="font-size:13px; color:var(--text3);">Já tem conta? </span>
+        <a href="#" onclick="switchTab('login')" style="font-size:13px; color:var(--blue);">Entrar</a>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<script>
+  // Switch between login/register tabs
+  function switchTab(tab) {
+    document.getElementById('tab-login').classList.toggle('active', tab === 'login');
+    document.getElementById('tab-register').classList.toggle('active', tab === 'register');
+    document.getElementById('form-login').classList.toggle('active', tab === 'login');
+    document.getElementById('form-register').classList.toggle('active', tab === 'register');
+  }
+
+  // Check URL param on load
+  const urlTab = new URLSearchParams(window.location.search).get('tab');
+  if (urlTab === 'register') switchTab('register');
+
+  // Login handler
+  function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    const errorEl = document.getElementById('login-error');
+
+    const users = JSON.parse(localStorage.getItem('vi_users') || '[]');
+    const user = users.find(u => u.email === email && u.password === password);
+
+    if (!user) {
+      errorEl.textContent = 'Email ou senha incorretos.';
+      errorEl.classList.add('show');
+      return;
+    }
+
+    // Save session
+    localStorage.setItem('vi_session', JSON.stringify({ name: user.name, email: user.email, area: user.area, cidade: user.cidade }));
+    window.location.href = 'app.html';
+  }
+
+  // Register handler
+  function handleRegister(e) {
+    e.preventDefault();
+    const name = document.getElementById('reg-name').value.trim();
+    const email = document.getElementById('reg-email').value.trim();
+    const cidade = document.getElementById('reg-cidade').value.trim();
+    const area = document.getElementById('reg-area').value;
+    const password = document.getElementById('reg-password').value;
+    const errorEl = document.getElementById('register-error');
+
+    const users = JSON.parse(localStorage.getItem('vi_users') || '[]');
+
+    if (users.find(u => u.email === email)) {
+      errorEl.textContent = 'Este email já está cadastrado.';
+      errorEl.classList.add('show');
+      return;
+    }
+
+    users.push({ name, email, cidade, area, password });
+    localStorage.setItem('vi_users', JSON.stringify(users));
+    localStorage.setItem('vi_session', JSON.stringify({ name, email, area, cidade }));
+    window.location.href = 'app.html';
+  }
+</script>
+</body>
+</html>

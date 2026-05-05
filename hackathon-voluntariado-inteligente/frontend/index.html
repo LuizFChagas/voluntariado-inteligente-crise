@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voluntariado Inteligente — UNASP + IBM</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Extra styles specific to landing page */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .feature-card {
+      padding: 24px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .feature-icon { font-size: 28px; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .feature-card p { font-size: 13px; color: var(--text2); line-height: 1.6; }
+    .tech-strip {
+      padding: 32px 24px;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .tech-strip-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .tech-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text3);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .tech-item .t-icon { font-size: 22px; }
+    .stats-strip {
+      background: var(--bg2);
+      padding: 48px 24px;
+    }
+    .stats-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      text-align: center;
+    }
+    .stat-item .stat-num {
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--blue);
+      line-height: 1;
+      display: block;
+      letter-spacing: -2px;
+    }
+    .stat-item .stat-label {
+      font-size: 14px;
+      color: var(--text2);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="logo-icon">🤝</div>
+      <span>Voluntariado Inteligente</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#como-funciona">Como Funciona</a></li>
+      <li><a href="#agentes">Agentes IA</a></li>
+      <li><a href="#features">Recursos</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-ghost">Entrar</a>
+      <a href="login.html?tab=register" class="btn btn-primary">Seja Voluntário</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Hackathon UNASP + IBM 2026
+    </div>
+    <h1>
+      Voluntariado<br>
+      <span class="highlight">Inteligente</span> para<br>
+      Situações de <span class="highlight-red">Crise</span>
+    </h1>
+    <p>
+      Plataforma de IA que conecta voluntários, instituições e recursos humanos
+      no momento certo, coordenada pelo IBM watsonx Orchestrate.
+    </p>
+    <div class="hero-actions">
+      <a href="login.html?tab=register" class="btn btn-primary btn-lg">🙋 Quero Ser Voluntário</a>
+      <a href="app.html" class="btn btn-red btn-lg">🚨 Reportar Emergência</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="num">5</span>
+        <span class="label">Agentes IA Ativos</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">24/7</span>
+        <span class="label">Monitoramento</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">IBM</span>
+        <span class="label">watsonx Orchestrate</span>
+      </div>
+    </div>
+    <div class="emergency-bar">
+      <span class="alert-icon">🆘</span>
+      <span>Emergências: <strong>Bombeiros 193</strong> · <strong>SAMU 192</strong> · <strong>Defesa Civil 199</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STRIP -->
+<div class="tech-strip">
+  <div class="tech-strip-inner">
+    <div class="tech-item"><span class="t-icon">🔷</span> IBM watsonx Orchestrate</div>
+    <div class="tech-item"><span class="t-icon">🤖</span> Multi-Agent AI</div>
+    <div class="tech-item"><span class="t-icon">📊</span> Google Sheets DB</div>
+    <div class="tech-item"><span class="t-icon">✉️</span> Email Automático</div>
+    <div class="tech-item"><span class="t-icon">🏫</span> UNASP</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-num">5</span>
+      <div class="stat-label">Agentes Especializados</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">100%</span>
+      <div class="stat-label">Automatizado com IA</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">&lt;2s</span>
+      <div class="stat-label">Tempo de Resposta</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">4</span>
+      <div class="stat-label">Tipos de Crise Cobertos</div>
+    </div>
+  </div>
+</div>
+
+<!-- COMO FUNCIONA -->
+<section class="how-works" id="como-funciona">
+  <div class="container">
+    <div class="section-label">Como Funciona</div>
+    <h2 class="section-title">Coordenação inteligente<br>em 3 passos</h2>
+    <p class="section-subtitle">
+      O IBM watsonx Orchestrate orquestra automaticamente voluntários,
+      instituições e respostas a crises em tempo real.
+    </p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3>Voluntário se cadastra</h3>
+        <p>O agente de triagem coleta habilidades, disponibilidade e localização.
+           Confirmação automática por email. Todo o fluxo é conduzido pela IA.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3>Crise é reportada</h3>
+        <p>Qualquer pessoa pode reportar uma emergência. O agente de crise classifica
+           a urgência, identifica voluntários na região e aciona automaticamente.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>IA coordena a resposta</h3>
+        <p>O Manager Agent orquestra todos os agentes: alerta voluntários,
+           notifica coordenadores e registra cada ocorrência em tempo real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENTES -->
+<section id="agentes" style="padding: 96px 24px;">
+  <div class="container">
+    <div class="section-label">Sistema Multi-Agente</div>
+    <h2 class="section-title">5 Agentes IA trabalhando<br>em conjunto</h2>
+    <p class="section-subtitle">
+      Cada agente é especializado em uma função crítica, orquestrados pelo
+      IBM watsonx Orchestrate para máxima eficiência.
+    </p>
+    <div class="agents-grid">
+
+      <div class="agent-card" style="--agent-color:#3B82F6; --agent-bg:rgba(59,130,246,0.1);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div class="agent-icon">🎯</div>
+          <span class="live-badge">Live</span>
+        </div>
+        <h3>Manager Agent</h3>
+        <p>Coordenador central. Recebe todas as mensagens, identifica a intenção do usuário
+           e roteia para o agente especialista correto sem revelar a arquitetura interna.</p>
+        <span class="agent-tag">Orquestrador</span>
+      </div>
+
+      <div class="agent-card" style="--agent-color:#10B981; --agent-bg:rgba(16,185,129,0.1);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div class="agent-icon">🙋</div>
+          <span class="live-badge">Live</span>
+        </div>
+        <h3>Volunteer Triage Agent</h3>
+        <p>Realiza o cadastro completo de voluntários em uma única interação.
+           Coleta dados, confirma com o usuário e executa cadastro + 3 emails automáticos.</p>
+        <span class="agent-tag">Cadastro</span>
+      </div>
+
+      <div class="agent-card" style="--agent-color:#EF4444; --agent-bg:rgba(239,68,68,0.1);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div class="agent-icon">🚨</div>
+          <span class="live-badge">Live</span>
+        </div>
+        <h3>Crisis Agent</h3>
+        <p>Resposta imediata a emergências. Classifica urgência (🔴 Crítico / 🟡 Urgente / 🟢 Monitoramento),
+           aciona voluntários por região e registra cada ocorrência.</p>
+        <span class="agent-tag">Emergência</span>
+      </div>
+
+      <div class="agent-card" style="--agent-color:#F59E0B; --agent-bg:rgba(245,158,11,0.1);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div class="agent-icon">🎓</div>
+          <span class="live-badge">Live</span>
+        </div>
+        <h3>Training Agent</h3>
+        <p>Trilhas de capacitação personalizadas por área e nível de experiência.
+           Aplica quiz, emite certificado digital e sugere o próximo nível de treinamento.</p>
+        <span class="agent-tag">Capacitação</span>
+      </div>
+
+      <div class="agent-card" style="--agent-color:#8B5CF6; --agent-bg:rgba(139,92,246,0.1);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div class="agent-icon">📋</div>
+          <span class="live-badge">Live</span>
+        </div>
+        <h3>Preparedness Agent</h3>
+        <p>Guia instituições educacionais por checklists de preparação pré-crise
+           (enchente, deslizamento, incêndio). Gera planos de ação com prazos e envia por email.</p>
+        <span class="agent-tag">Checklist</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="how-works" id="features">
+  <div class="container">
+    <div class="section-label">Recursos</div>
+    <h2 class="section-title">Tudo que você precisa<br>para salvar vidas</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Resposta Imediata</h3>
+        <p>Voluntários da região são alertados automaticamente em segundos após um relato de crise.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+        <h3>Match por Região</h3>
+        <p>O sistema localiza voluntários geograficamente próximos ao ponto de necessidade.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📧</div>
+        <h3>Email Automático</h3>
+        <p>Confirmações, alertas, certificados e relatórios enviados automaticamente via Gmail.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Dados em Tempo Real</h3>
+        <p>Todos os cadastros, crises e treinamentos registrados em Google Sheets em tempo real.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h3>Certificação Digital</h3>
+        <p>Voluntários recebem certificados digitais após completar trilhas de capacitação.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Protocolos Oficiais</h3>
+        <p>Todas as orientações seguem protocolos da Defesa Civil, Bombeiros e SAMU.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Pronto para fazer<br>a diferença?</h2>
+    <p>Junte-se à rede de voluntários inteligentes e ajude quando mais importa.</p>
+    <div class="cta-buttons">
+      <a href="login.html?tab=register" class="btn btn-primary btn-lg">🙋 Cadastrar como Voluntário</a>
+      <a href="app.html" class="btn btn-outline btn-lg">💬 Falar com o Assistente</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <div class="logo-icon">🤝</div>
+        <span>Voluntariado Inteligente</span>
+      </div>
+      <p>Plataforma de IA para coordenação de voluntariado em situações de crise,
+         desenvolvida no Hackathon UNASP + IBM 2026.</p>
+    </div>
+    <div class="footer-emergency">
+      <h4>Emergências</h4>
+      <div class="emergency-numbers">
+        <span class="em-num">🚒 193</span>
+        <span class="em-num">🚑 192</span>
+        <span class="em-num">🏚️ 199</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Voluntariado Inteligente — UNASP</span>
+    <div class="ibm-badge">
+      <span>Powered by</span>
+      <strong>IBM watsonx Orchestrate</strong>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Check tab param for login redirect
+  const params = new URLSearchParams(window.location.search);
+</script>
+</body>
+</html>
